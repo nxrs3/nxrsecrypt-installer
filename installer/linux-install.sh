@@ -60,6 +60,7 @@ function nxrsecrypt
     . venv/bin/activate.fish
     python3 $HOME/nxrsecrypt/main.py
     deactivate
+    cd ~
 end
 EOF
     success "Fish function installed"
@@ -68,6 +69,7 @@ fi
 success "Shell function registered"
 
 # ── Done ──────────────────────────────────────────────────────────────────────
+cd ~
 echo ""
 echo -e "${GREEN}Install complete!${NC} Restart your terminal or run:"
 echo -e "  ${CYAN}source ~/.bashrc${NC}   # Bash"
