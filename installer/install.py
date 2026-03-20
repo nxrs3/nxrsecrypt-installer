@@ -2,7 +2,7 @@ import subprocess
 import sys
 from os import path
 
-path = path.join(path.expanduser("~"), "nxrsecrypt-installer", "installer")
+installer_path = path.join(path.expanduser("~"), "nxrsecrypt-installer", "installer")
 
 print("\033[2J\033[H", end="")
 
@@ -19,15 +19,15 @@ while True:
     print()
 
     if OS == "1":
-        subprocess.run(["cmd", "/c", "windows-install.cmd"], check=True, cwd=path)
+        subprocess.run(["cmd", "/c", "windows-install.cmd"], check=True, cwd=installer_path)
         sys.exit()
     elif OS == "2":
-        subprocess.run(["chmod", "+x", "linux-install.sh"], check=True, cwd=path)
-        subprocess.run(["./linux-install.sh"], check=True, cwd=path)
+        subprocess.run(["chmod", "+x", "linux-install.sh"], check=True, cwd=installer_path)
+        subprocess.run(["./linux-install.sh"], check=True, cwd=installer_path)
         sys.exit()
     elif OS == "3":
-        subprocess.run(["chmod", "+x", "macos-install.sh"], check=True, cwd=path)
-        subprocess.run(["./macos-install.sh"], check=True, cwd=path)
+        subprocess.run(["chmod", "+x", "macos-install.sh"], check=True, cwd=installer_path)
+        subprocess.run(["./macos-install.sh"], check=True, cwd=installer_path)
         sys.exit()
 
     else:
