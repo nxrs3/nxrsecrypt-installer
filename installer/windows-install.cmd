@@ -42,6 +42,7 @@ set SCRIPT=%USERPROFILE%\nxrsecrypt\nxrsecrypt.bat
     echo call venv\Scripts\activate.bat
     echo python %%USERPROFILE%%\nxrsecrypt\main.py
     echo call deactivate
+    echo call cd /d "%USERPROFILE%
 ) > "%SCRIPT%" || call :error "Failed to create launcher script"
 call :success "Launcher created at %SCRIPT%"
 
@@ -56,6 +57,7 @@ if errorlevel 1 (
 )
 
 :: ── Done ─────────────────────────────────────────────────────────────────────
+cd /d "%USERPROFILE%
 echo.
 powershell -Command "Write-Host 'Install complete! ' -ForegroundColor Green -NoNewline; Write-Host 'Restart your terminal and run: ' -NoNewline; Write-Host 'nxrsecrypt' -ForegroundColor Cyan"
 exit /b 0
